@@ -12,10 +12,12 @@ buildscript {
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
+apply plugin: 'application'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 
-jar {
-	baseName = 'inventory-application'
+war {
+	baseName = 'pressing-management'
 	version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
@@ -31,7 +33,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('mysql:mysql-connector-java')
 	compile('org.springframework.boot:spring-boot-starter-security')
-	compile('io.springfox:springfox-swagger2')
 	compile('org.springframework.boot:spring-boot-starter-aop')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('net.sf.ehcache:ehcache-core:2.6.9') {

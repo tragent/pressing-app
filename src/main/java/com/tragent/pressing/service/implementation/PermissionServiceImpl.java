@@ -11,7 +11,7 @@ import com.tragent.pressing.repository.PermissionRepository;
 import com.tragent.pressing.service.PermissionService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
+@Secured("ROLE_ADMINISTRATION")
 public class PermissionServiceImpl implements PermissionService {
 	
 	@Autowired

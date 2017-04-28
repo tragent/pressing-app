@@ -16,7 +16,7 @@ import com.tragent.pressing.service.PaymentMethodService;
 import com.tragent.pressing.service.PaymentService;
 
 @Service
-@Secured({"ROLE_MANAGEMENT", "ROLE_SALES_AGENT"})
+@Secured({"ROLE_MANAGEMENT", "ROLE_SALES_AGENT", "ROLE_ADMINISTRATION"})
 public class PaymentServiceImpl implements PaymentService {
 	
 	@Autowired

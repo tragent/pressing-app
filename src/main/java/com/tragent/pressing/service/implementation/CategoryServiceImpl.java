@@ -11,7 +11,7 @@ import com.tragent.pressing.repository.CategoryRepository;
 import com.tragent.pressing.service.CategoryService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
+@Secured({"ROLE_MANAGEMENT", "ROLE_ADMINISTRATION"})
 public class CategoryServiceImpl implements CategoryService {
 	
 	@Autowired

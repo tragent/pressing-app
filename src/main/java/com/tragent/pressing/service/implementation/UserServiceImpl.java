@@ -12,13 +12,13 @@ import com.tragent.pressing.repository.UserRepository;
 import com.tragent.pressing.service.UserService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
 public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
 
 	@Override
+	@Secured("ROLE_ADMINISTRATION")
 	public Collection<CustomUser> findAll() {
 		
 		List<CustomUser> users = userRepository.findAll();
@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Secured("ROLE_ADMINISTRATION")
 	public CustomUser create(CustomUser user) {
 		
 		if (findByUserName(user.getUsername()) != null) {
@@ -64,6 +65,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
+	@Secured("ROLE_ADMINISTRATION")
 	public void deactivate(Long id) {
 		
 		CustomUser user = findById(id);

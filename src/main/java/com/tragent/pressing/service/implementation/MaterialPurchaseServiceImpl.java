@@ -12,7 +12,7 @@ import com.tragent.pressing.repository.MaterialPurchaseRepository;
 import com.tragent.pressing.service.MaterialPurchaseService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
+@Secured({"ROLE_MANAGEMENT", "ROLE_ADMINISTRATION"})
 public class MaterialPurchaseServiceImpl implements MaterialPurchaseService {
 	
 	@Autowired

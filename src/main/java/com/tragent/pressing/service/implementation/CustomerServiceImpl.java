@@ -11,7 +11,7 @@ import com.tragent.pressing.repository.CustomerRepository;
 import com.tragent.pressing.service.CustomerService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
+@Secured("ROLE_ADMINISTRATION")
 public class CustomerServiceImpl implements CustomerService {
 	
 	@Autowired
