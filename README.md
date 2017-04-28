@@ -39,11 +39,11 @@ Generic Pressing Management system for small and medium size businesses
 * Find reservation by due date it by deposit date
 * Get all payments made by a customer for n item
 * View all roles and permission
-
-## What doesn't:
 * De-activation of any record in all accounts
 * View user's roles
 * View permissions belong to a role
+
+## What doesn't:
 * Unit test
 
 

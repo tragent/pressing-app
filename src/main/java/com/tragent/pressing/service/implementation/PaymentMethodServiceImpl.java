@@ -11,7 +11,7 @@ import com.tragent.pressing.repository.PaymentMethodRepository;
 import com.tragent.pressing.service.PaymentMethodService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
+@Secured("ROLE_ADMINISTRATION")
 public class PaymentMethodServiceImpl implements PaymentMethodService{
 	
 	@Autowired

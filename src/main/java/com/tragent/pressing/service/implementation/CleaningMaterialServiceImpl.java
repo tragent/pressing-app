@@ -11,7 +11,7 @@ import com.tragent.pressing.repository.CleaningMaterialRepository;
 import com.tragent.pressing.service.CleaningMaterialService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
+@Secured({"ROLE_MANAGEMENT", "ROLE_ADMINISTRATION"})
 public class CleaningMaterialServiceImpl implements CleaningMaterialService {
 	
 	@Autowired

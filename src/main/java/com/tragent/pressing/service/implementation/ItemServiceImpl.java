@@ -13,7 +13,7 @@ import com.tragent.pressing.repository.ItemRepository;
 import com.tragent.pressing.service.ItemService;
 
 @Service
-@Secured("ROLE_MANAGEMENT")
+@Secured({"ROLE_MANAGEMENT", "ROLE_ADMINISTRATION"})
 public class ItemServiceImpl implements ItemService {
 	
 	@Autowired

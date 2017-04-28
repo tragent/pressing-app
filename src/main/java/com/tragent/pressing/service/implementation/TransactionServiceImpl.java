@@ -12,7 +12,7 @@ import com.tragent.pressing.repository.TransactionRepository;
 import com.tragent.pressing.service.TransactionService;
 
 @Service
-@Secured({"ROLE_MANAGEMENT", "ROLE_SALES_AGENT"})
+@Secured({"ROLE_MANAGEMENT", "ROLE_SALES_AGENT", "ROLE_ADMINISTRATION"})
 public class TransactionServiceImpl implements TransactionService {
 	
 	@Autowired
