@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.tragent.pressing.model.CustomUser;
@@ -16,6 +18,9 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	@Override
 	@Secured("ROLE_ADMINISTRATION")
@@ -53,6 +58,7 @@ public class UserServiceImpl implements UserService {
 		if (findByUserName(user.getUsername()) != null) {
 			return null;
 		}
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		CustomUser savedUser = userRepository.save(user);
 		return savedUser;
 	}
@@ -60,6 +66,7 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public CustomUser update(CustomUser user) {
 		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 		CustomUser savedUser = userRepository.save(user);
 		return savedUser;
 	}

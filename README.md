@@ -10,6 +10,12 @@ Generic Pressing Management system for small and medium size businesses
 * spring.datasource.data-username={database username}
 * spring.datasource.data-password={database password}
 
+* Run script schema.sql , found in directory src/main/resources/scripts , using the command:
+```
+mysql -h "localhost" -u "{database username}" "-p{database password}" "{databasename}" < "schema.sql"
+```
+**N.B**: Run script **ONLY** after the very first run/build of the system
+
 ## What works:
 * Authentication and authorization
 * View all users
@@ -45,6 +51,7 @@ Generic Pressing Management system for small and medium size businesses
 
 ## What doesn't:
 * Unit test
+* Automatic run of SQL script
 
 
 
