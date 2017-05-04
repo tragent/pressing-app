@@ -1,6 +1,5 @@
 package com.tragent.pressing.controller;
 
-import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.tragent.pressing.model.CustomUser;
-import com.tragent.pressing.model.LoggedInUser;
 import com.tragent.pressing.service.UserService;
 
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -32,15 +30,15 @@ public class AuthenticationController {
 	 */
 	@RequestMapping(method=RequestMethod.GET,
 			produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<LoggedInUser> getCategories(){
+	public ResponseEntity<CustomUser> getCategories(){
 		CustomUser loggedInUser = userService.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName());
-		String username = loggedInUser.getUsername();
+		/*String username = loggedInUser.getUsername();
 		String password = loggedInUser.getPassword();
 		String plainClientCredentials= username + ':' + password;
 		String base64EncodedAuthenticationKey = Base64.encodeBase64String(plainClientCredentials.getBytes());
 		
-		LoggedInUser user = new LoggedInUser(loggedInUser, base64EncodedAuthenticationKey);
+		LoggedInUser user = new LoggedInUser(loggedInUser, base64EncodedAuthenticationKey);*/
 		
-		return new ResponseEntity<>(user, HttpStatus.OK);	
+		return new ResponseEntity<>(loggedInUser, HttpStatus.OK);	
 	}
 }
