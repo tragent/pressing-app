@@ -16,6 +16,10 @@ mysql -h "localhost" -u "{database username}" "-p{database password}" "{database
 ```
 **N.B**: Run script **ONLY** after the very first run/build of the system
 
+## Demo Login
+* Username: Admin
+* Password: password
+
 ## What works:
 * Authentication and authorization
 * View all users
