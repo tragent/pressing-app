@@ -4,17 +4,16 @@ Generic Pressing Management system for small and medium size businesses
 ## Main developers: **`Team SmartFinance`**
 
 ## Database configuration (file: application.properties)
+* Create a database by default we use 'pressing'
 * spring.datasource.url=jdbc:mysql://localhost:3306/{databasename}
 * spring.datasource.username={database username}
 * spring.datasource.password={database password}
 * spring.datasource.data-username={database username}
 * spring.datasource.data-password={database password}
 
-* Run script schema.sql , found in directory src/main/resources/scripts , using the command:
-```
-mysql -h "localhost" -u "{database username}" "-p{database password}" "{databasename}" < "schema.sql"
-```
-**N.B**: Run script **ONLY** after the very first run/build of the system
+**N.B**: Just having an empty database called 'pressing' is enough. 
+Default db username: root
+Default db password: mysql 
 
 ## Demo Login
 * Username: Admin
