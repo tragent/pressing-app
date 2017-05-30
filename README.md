@@ -12,8 +12,8 @@ Generic Pressing Management system for small and medium size businesses
 * spring.datasource.data-password={database password}
 
 **N.B**: Just having an empty database called 'pressing' is enough. 
-Default db username: root
-Default db password: mysql 
+*Default db username: root
+*Default db password: mysql 
 
 ## Demo Login
 * Username: Admin
